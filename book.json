@@ -1,0 +1,35 @@
+{
+  "author": "Hui Cao <nonocast@gmail.com>",
+  "language": "zh-hans",
+  "description": "nonocast's blog",
+  "extension": null,
+  "generator": "site",
+  "links": {
+    "sharing": {
+      "all": false
+    },
+    "sidebar": {
+    }
+  },
+  "root": ".",
+  "styles": {
+    "website": "styles/website.css"
+  },
+  "output": null,
+  "pdf": {
+    "fontSize": 12,
+    "footerTemplate": null,
+    "headerTemplate": null,
+    "margin": {
+      "bottom": 36,
+      "left": 62,
+      "right": 62,
+      "top": 36
+    },
+    "pageNumbers": false,
+    "paperSize": "a4"
+  },
+  "plugins": [],
+  "title": "nonocast",
+  "variables": {}
+}
