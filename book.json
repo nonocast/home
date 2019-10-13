@@ -29,7 +29,24 @@
     "pageNumbers": false,
     "paperSize": "a4"
   },
-  "plugins": [],
+  "plugins": [
+    "github",
+    "sharing-plus",
+    "-donate"
+  ],
   "title": "nonocast",
-  "variables": {}
+  "variables": {},
+  "pluginsConfig": {
+    "github": {
+      "url": "https://github.com/nonocast"
+    },
+    "donate": {
+      "button": "Donate"
+    },
+    "sharing": {
+      "facebook": false,
+      "twitter": false
+    }
+  }
+
 }
