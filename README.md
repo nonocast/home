@@ -5,23 +5,10 @@
 
 ### 13 Oct 2019
   
-* Questions
-  * How computer works?
-  * How OS (linux, android) works?
-  * How AI works?
-  * How to make hardware product?
-  * How to make software product?
-
-* Topic
-  * Hardware (偏向硬件底层、操作系统部分)
-  * Software (开发服务和应用)
-  * Data (数据分析和机器学习)
-
-* keywords
-  * linux
-  * android
-  * git
-  * nodejs
-  * react
-  * graphql
-  * pytorch
+Questions:
+- 嵌入式系统
+- 后台服务
+- 前端应用
+- 流媒体
+- 机器学习
+- 开发流程和部署

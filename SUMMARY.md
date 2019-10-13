@@ -2,37 +2,20 @@
 
 * [首页](README.md)
 
-### 单片机系统
+### 嵌入式系统
 
-* [快速开始](docs/mcs/quick.md)
+* [51单片机](docs/mcs/quick.md)
 
+### 后台服务
 
-### Linux系统
+### 前端应用
 
+### 流媒体
 
-### Android系统
+### 机器学习
 
+### 开发流程和部署
 
-### 编程语言
-* [Assembly]()
-* [C/C++]()
-* [Java]()
-* [Javascript]()
-* [Swift]()
-* [Kotlin]()
-* [Dart]()
-
-### 框架
-* [Nodejs]()
-* [GraphQL]()
-* [React]()
-* [Android]()
-* [SwiftUI]()
-* [Flutter]()
-
-### 其他
-* [Git]()
+* [版本策略]()
 * [Nginx]()
-* [ffmpeg]()
-* [mongodb]()
-* [network]()
+* [Git]()
