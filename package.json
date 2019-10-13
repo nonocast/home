@@ -1,0 +1,16 @@
+{
+  "name": "home",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/nonocast/home.git",
+  "author": "Hui Cao <nonocast@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "gitbook serve",
+    "build": "gitbook build"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.1.1",
+    "gitbook-cli": "^2.3.2"
+  }
+}
