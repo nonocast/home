@@ -4,7 +4,9 @@
 
 ### 嵌入式系统
 
-* [51单片机](docs/mcs/quick.md)
+* [计算机是什么?](docs/system/computer.md)
+* [单片机是什么?](docs/system/mcs-intro.md)
+* [怎么为单片机写程序?](docs/system/mcs-write-code.md)
 
 ### 后台服务
 

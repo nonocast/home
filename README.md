@@ -3,6 +3,13 @@
 * **github**: [@nonocast](http://github.com/nonocast)
 * **email**: [nonocast@gmail.com](mailto:nonocast@gmail.com) 
 
+### 15 Oct 2019
+* [单片机是什么?](docs/system/mcs-intro.md)
+
+### 14 Oct 2019
+
+* [计算机是什么?](docs/system/computer.md)
+
 ### 13 Oct 2019
   
 Questions:
