@@ -7,6 +7,8 @@
 * [计算机是什么?](docs/system/computer.md)
 * [单片机是什么?](docs/system/mcs-intro.md)
 * [怎么为单片机写程序?](docs/system/mcs-write-code.md)
+* [中断和时钟](docs/system/mcs-int-and-timer.md)
+* [串口](docs/system/mcs-serial-port.md)
 
 ### 后台服务
 

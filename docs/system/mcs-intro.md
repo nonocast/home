@@ -8,6 +8,8 @@
 
 ## 8051
 
+> The Intel 8051AH is a MCS-51 NMOS single-chip 8-bit microcontroller with 32 I/O lines, 2 Timers/Counters, 5 Interrupts/2 priority levels 4 KB ROM, 128 Bytes on-chip RAM.
+
 早在1981年, Intel就生产了8位微控制器, 命名为8051。8051中集成了18B RAM, 4KB ROM, 两个定时器, 一个串口以及4个端口(每个端口8位), 8位以为着CPU一次只能处理8个bit。
 
 当时因为版权问题所以每家生产的机器指令不相同也能相同, 但是后来Intel忙着去开发更高级的CPU, 也没心思管了, 就将8051授权给没能力设计芯片的制造商去生产, 也就意味着只要是为一家8051芯片编程, 就同时可以运行在其他制造商生产的8051上运行。
@@ -82,7 +84,7 @@ void main() {
 对应的汇编其实就更加直白,
 
 app.asm
-```
+```asm
 ORG 0H
 CLR 90H
 HERE: SJMP HERE

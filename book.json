@@ -32,6 +32,7 @@
   "plugins": [
     "github",
     "sharing-plus",
+    "analytics",
     "-donate"
   ],
   "title": "nonocast",
@@ -46,6 +47,10 @@
     "sharing": {
       "facebook": false,
       "twitter": false
+    },
+    "analytics": {
+      "google": "UA-150148747-1",
+      "baidu": "d80933db377fc5ec6a44a7b2f594c09f"
     }
   }
 
