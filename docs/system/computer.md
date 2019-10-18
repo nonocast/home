@@ -54,6 +54,28 @@ CPU很单纯, 但是Memory就有些麻烦, 我们用树状结构来表达:
 - 单片机中的ROM和U盘都采用EEPROM作为存储媒介, 但单片机中的EEPROM就上升为ROM, 而U盘就是外部设备, 所以这个就和CPU寻址有直接关系
 
 
+## Transistor (晶体管)
+
+整个计算机中最重要的就是晶体管, 事实上晶体管可以理解为一个没有机械结构的开关(switch), 通过一个弱小的电流控制开关的打开和闭合。
+
+推荐这个视频 [Transistors, How do they work ? - YouTube](https://www.youtube.com/watch?v=7ukDKVHnac4), 墙内就这个[链接(bilibili)](https://www.bilibili.com/video/av9735297)
+
+- Semiconductor (半导体)
+- 硅(Si)是四键, 通过和其他元素混合形成特定效果
+- N-type DOPING (N型参杂, 参杂五键的麟(Boracium, B))
+- P-type DOPING (P型参杂, 参杂三键的硼(Phosphorum, P))
+- BJT (双极性晶体管) 和 FET (场效应晶体管)
+- 整个计算逻辑都是在晶体管之间完成
+
+
+## 0和1是如何转化为电的?
+
+其实从来就是电, 整个计算机都是电的世界, CPU的输入输出以及存储都是采用电的形式, 0和1的世界是虚构出来, 最终的物理载体就是电信号。
+
+换句话说, 我们是用一种意识在操纵整个电路。
+
+见知乎讨论
+[代码是如何控制硬件的？ - 知乎](https://www.zhihu.com/question/20492284/answer/15279863)
 
 ### 参考阅读
 - [计算机是如何启动的？- 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2013/02/booting.html)
