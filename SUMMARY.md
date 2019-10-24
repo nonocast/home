@@ -23,3 +23,7 @@
 * [版本策略]()
 * [Nginx]()
 * [Git]()
+
+### 专题
+
+* [数学](docs/math/index.md)

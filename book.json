@@ -33,6 +33,7 @@
     "github",
     "sharing-plus",
     "analytics",
+    "katex",
     "-donate"
   ],
   "title": "nonocast",
