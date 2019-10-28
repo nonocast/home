@@ -24,6 +24,9 @@
 * [Nginx]()
 * [Git]()
 
-### 专题
+### 数学
 
-* [数学](docs/math/index.md)
+* [数学基础](docs/math/index.md)
+* [线性代数](docs/math/algebra.md)
+* [微积分](docs/math/calculus.md)
+* [KaTex](docs/math/katex.md)

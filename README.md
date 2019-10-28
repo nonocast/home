@@ -3,6 +3,12 @@
 * **github**: [@nonocast](http://github.com/nonocast)
 * **email**: [nonocast@gmail.com](mailto:nonocast@gmail.com) 
 
+### 29 Oct 2919
+* 增加了数学部分 (草稿)
+  - [数学基础](docs/math/index.md)
+  - [线性代数](docs/math/algebra.md)
+  - [微积分](docs/math/calculus.md)
+
 ### 15 Oct 2019
 * [单片机是什么?](docs/system/mcs-intro.md)
 
