@@ -34,6 +34,8 @@
     "sharing-plus",
     "analytics",
     "katex",
+    "nonocast-style",
+    "tbfed-pagefooter",
     "-donate"
   ],
   "title": "nonocast",
@@ -52,6 +54,15 @@
     "analytics": {
       "google": "UA-150148747-1",
       "baidu": "ee1d39149a5531317b43714b1e3e4317"
+    },
+    "tbfed-pagefooter": {
+      "copyright": "&copy nonocast"
+    }, 
+    "nonocast-style": {
+      "clientID": "c7bb859a39b4d0ad5dea",
+      "clientSecret": "a1d798c0ec63249d2afdfe277ac9cfbb59452d26",
+      "repo": "nonocast.github.io",
+      "owner": "nonocast"
     }
   }
 }

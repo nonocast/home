@@ -80,6 +80,3 @@ CPU很单纯, 但是Memory就有些麻烦, 我们用树状结构来表达:
 ### 参考阅读
 - [计算机是如何启动的？- 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2013/02/booting.html)
 - [计算机是如何启动的？- Misaka.r.Me](http://www.misakar.me/neox2/)
-
-
-> 最后更新时间: 14 Oct 2019
