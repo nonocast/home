@@ -731,12 +731,14 @@ libcalc.a(calc.o):
 
 client如何调用呢?
 
-`ld app.o -lSystem -L. -lcalc -o app`app.c
-```
+`ld app.o -lSystem -L. -lcalc -o app`
+
 回忆一下之前的link
+
 `ld app.o calc.o -lSystem -o app`
 
 -L告诉ld link directory，然后-l表示lib name
+
 ```
 -lx
 This option tells the linker to search for libx.dylib or libx.a in the library search path.  If string x is of the form y.o, then that file is searched for in the same places, but without prepending `lib' or appending `.a' or `.dylib' to the filename.
@@ -759,6 +761,7 @@ Add dir to the list of directories in which to search for libraries.  Directorie
 
 当同时存在libcalc.a和libcalc.so时，gcc会优先采用so方式，
 同样的语句link app这时候会动态link到libcalc.so, 验证一下，
+
 ```
 $ file app
 app: Mach-O 64-bit executable x86_64
@@ -771,6 +774,7 @@ app:
 ```
 
 对比一下之前libcalc.a的链接，
+
 ```
 $ otool -L app
 app:
@@ -780,6 +784,7 @@ app:
 mac的otool对应linux下的ldd.
 
 此时如果移除so则运行会报错,
+
 ```
 ./app
 dyld: Library not loaded: libcalc.so
@@ -787,13 +792,15 @@ dyld: Library not loaded: libcalc.so
   Reason: image not found
 [1]    28999 abort      ./app
 ```
+
 将libcalc.so ln到/usr/local/lib
 
-```
+```bash
 ln -s ~/Developer/projects/learn-c/03-multi-files/src/libcalcx.so /usr/local/lib/libcalc.so
 ./app
 1+2=3
 ```
+
 那么搜索so的默认路径是什么呢?
 默认值: $(HOME)/lib:/usr/local/lib:/lib:/usr/lib
 
