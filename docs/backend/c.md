@@ -1,3 +1,5 @@
+# C语言基础
+
 gcc从app.c到a.out分为4个步骤:
 - Prepressing (预处理)
 - Compilation (编译)
@@ -13,7 +15,7 @@ gcc实际是一个工具链，针对不同的语言有不同的套路，如果�
 $cpp hello.c > hello.i
 
 假定app.c
-```
+```c
 int main(void) {
   return 0;
 }
@@ -33,7 +35,7 @@ int main(void) {
 ```
 
 加上stdio.h的app.c
-```
+```c
 #include <stdio.h>
 
 int main(void) {
@@ -116,8 +118,10 @@ int main(void) {
 大概就是这么个意义，把所有依赖的.h内容全部merge到一个文件。
 
 stdio.h太复杂，我们改为自己的header试试，
+
 app.c
-```
+
+```c
 #include "calc.h"
 
 int main(void) {
@@ -127,7 +131,8 @@ int main(void) {
 ```
 
 calc.h
-```
+
+```c
 #ifndef CALC_H
 #define CALC_H
 
@@ -137,6 +142,7 @@ int add(int a, int b);
 ```
 
 生成的app.i很干净
+
 ```
 # 1 "app.c"
 # 1 "<built-in>" 1
@@ -161,13 +167,16 @@ int main(void) {
 这个时候还不需要calc.c
 
 我们来做个实验，include是不是只能.h文件，能不能多次include
+
 hello.txt
+
 ```
 hello world
 ```
 
 app.c
-```
+
+```c
 #include "hello.txt"
 #include "hello.txt"
 #include "hello.txt"
@@ -178,7 +187,7 @@ int main(void) {
 ```
 
 生成app.i如下
-```
+```c
 # 1 "app.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
@@ -247,7 +256,8 @@ int main(void) {
 所以当我们无法判断宏定义的时候，可以直接查看cpp生成的.i文件。
 
 根据以上的
-```
+
+```c
 #include <stdio.h>
 #include "calc.c"
 
@@ -258,7 +268,8 @@ int main(void) {
 ```
 其实这样gcc app.c也是ok，可以正常运行的，你了解这个原理就行。
 你完全可以理解为,
-```
+
+```c
 #include <stdio.h>
 
 int add(int a, int b) {
@@ -270,8 +281,10 @@ int main(void) {
   return 0;
 }
 ```
+
 而引用.h则可以理解为
-```
+
+```c
 #include <stdio.h>
 
 int add(int, int);
@@ -293,11 +306,13 @@ Compilation (编译)
 编译器就是将高级语言翻译成CPU相关的汇编语言的过程。
 
 `$gcc -S app.i -o app.s`
+
 等同于
+
 `$cc app.i`
 
 app.s
-```
+```s
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 10, 15	sdk_version 10, 15
 	.globl	_main                   ## -- Begin function main
@@ -339,14 +354,14 @@ Linking (链接)
 首先linking用到的是ld，称之为linker，linker作用就是link各种object files, libraries后生成可执行文件(output file)，ld可以生成一个最终的linked image, 可执行文件或者库文件。
 
 最简单的app.c
-```
+```c
 int main(void) {
   return 0;
 }
 ```
 
 在mac上linker只需要
-```
+```bash
 gcc -c app.c -o app.o
 ld app.o -lSystem
 ```
@@ -408,7 +423,7 @@ android ndk官方定义宿主系统如下:
 - 独立工具链，用于与其他编译系统集成，或与基于 configure 的项目搭配使用。
 
 通过下面的片段我们可以看到整个工具链的构成
-```
+```bash
 $ export TOOLCHAIN=$NDK/toolchains/llvm/prebuilt/$HOST_TAG
 $ export AR=$TOOLCHAIN/bin/aarch64-linux-android-ar
 $ export AS=$TOOLCHAIN/bin/aarch64-linux-android-as
@@ -431,24 +446,28 @@ armeabi-v7a, arm64-v8a, x86, x86-64就是响应的abi
 2. 通过Android Studio/SDK Manager，下载后在/Users/nonocast/Library/Android/sdk/ndk/20.0.5594570
 
 首先确定目标设备的abi,因为我是在mac上的emulator，所以肯定是x86的，
-```
+
+```bash
 $adb shell getprop ro.product.cpu.abilist
 x86
 ```
+
 Mipad
-```
+
+```bash
 $ adb shell getprop ro.product.cpu.abi    
 armeabi-v7a
 ```
 
 生成对应arch的toolchain,
-```
+
+```bash
 python make_standalone_toolchain.py --arch arm --install-dir ~/toolchain/arm
 python make_standalone_toolchain.py --arch arm64 --install-dir ~/toolchain/arm64
 python make_standalone_toolchain.py --arch x86 --install-dir ~/toolchain/x86
 ```
 
-```
+```bash
 // mipad
 /Users/nonocast/toolchain/arm/bin/clang app.c -o app
 ✗ file app
@@ -463,17 +482,16 @@ app: ELF 32-bit LSB shared object, Intel 80386, version 1 (SYSV), dynamically li
 [Cross Compiling C/C++ for Android - Nick Desaulniers](http://nickdesaulniers.github.io/blog/2016/07/01/android-cli/)
 [搞机：AS自带模拟器AVD Root 和 Xposed安装 - 掘金](https://juejin.im/post/5cd2839de51d453a6c23b080)
 
-```
+```bash
 $ adb push app /data/local/tmp
 $ adb shell /data/local/tmp/app
 hello world
 ```
 
-
 继续
 ----
 app.c
-```
+```c
 int add(int, int);
 
 int main(void) {
@@ -483,8 +501,10 @@ int main(void) {
 ```
 
 我们接着来看add这个方法,
+
 - prepressing: `gcc -E app.c -o app.i`
-```
+
+```c
 # 1 "app.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
@@ -499,8 +519,10 @@ int main(void) {
   return 0;
 }
 ```
+
 - compilation: `$gcc -S app.i -o app.s`
-```
+
+```s
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 10, 15	sdk_version 10, 15
 	.globl	_main                   ## -- Begin function main
@@ -533,7 +555,7 @@ _main:                                  ## @main
 
 对比有add方法定义的app.c生成的asm
 app.c
-```
+```c
 int add(int a, int b) {
   return a + b;
 }
@@ -545,7 +567,7 @@ int main(void) {
 ```
 
 app.s
-```
+```s
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 10, 15	sdk_version 10, 15
 	.globl	_add                    ## -- Begin function add
@@ -597,7 +619,7 @@ _main:                                  ## @main
 对比发现缺少_add的定义，没法完成callq _add
 
 最终导致link error
-```
+```bash
 gcc -c app.s -o app.o
 ➜  src git:(master) ✗ ld app.o -lSystem
 Undefined symbols for architecture x86_64:
@@ -610,7 +632,7 @@ ld: symbol(s) not found for architecture x86_64
 
 缺什么补什么，`gcc -S calc.c -o calc.s`
 calc.s
-```
+```s
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 10, 15	sdk_version 10, 15
 	.globl	_add                    ## -- Begin function add
@@ -646,7 +668,7 @@ _add:                                   ## @add
 所以，.h只不过是提取公因式，没有什么奥秘，无形中形成一个申明定义而已。
 
 app.c
-```
+```c
 #include <stdio.h>
 #include "calc.h"
 
@@ -657,7 +679,7 @@ int main(void) {
 ```
 
 calc.h
-```
+```c
 #ifndef CALC_H
 #define CALC_H
 
@@ -667,7 +689,7 @@ int add(int a, int b);
 ```
 
 calc.c
-```
+```c
 #include "calc.h"
 
 int add(int a, int b) {
@@ -686,7 +708,7 @@ lib是什么？
 lib就是.o的container
 通过ar来完成打包
 
-```
+```bash
 $ ar -crv libcalc.a calc.o
 $ file libcalc.a
 libcalc.a: current ar archive random library
@@ -708,6 +730,7 @@ libcalc.a(calc.o):
 ```
 
 client如何调用呢?
+
 `ld app.o -lSystem -L. -lcalc -o app`app.c
 ```
 回忆一下之前的link
@@ -776,5 +799,6 @@ ln -s ~/Developer/projects/learn-c/03-multi-files/src/libcalcx.so /usr/local/lib
 
 确实如此，放到~/lib下，也能work。
 
-[Linux Tutorial - Static, Shared Dynamic and Loadable Linux Libraries](http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html)
-[OS X 下动态库的引用 - 刘宝成 - 博客园](https://www.cnblogs.com/liubaocheng999/p/4285256.html)
+参考:
+- [Linux Tutorial - Static, Shared Dynamic and Loadable Linux Libraries](http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html)
+- [OS X 下动态库的引用 - 刘宝成 - 博客园](https://www.cnblogs.com/liubaocheng999/p/4285256.html)
