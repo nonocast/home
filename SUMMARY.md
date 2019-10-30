@@ -12,6 +12,8 @@
 
 ### 后台服务
 
+* [C语言基础](/docs/backend/c.md)
+
 ### 前端应用
 
 ### 流媒体
@@ -27,6 +29,7 @@
 ### 数学
 
 * [数学基础](docs/math/index.md)
+* [体制内数学](docs/math/school.md)
 * [线性代数](docs/math/algebra.md)
 * [微积分](docs/math/calculus.md)
 * [KaTex](docs/math/katex.md)
