@@ -3,6 +3,10 @@
 * **github**: [@nonocast](http://github.com/nonocast)
 * **email**: [nonocast@gmail.com](mailto:nonocast@gmail.com) 
 
+### 12 Nov 2019
+
+* 增加 [中断](docs/system/mcs-int-and-timer.md)
+
 ### 30 Oct 2019
 
 * 增加 [C语言基础](docs/backend/c.md)
